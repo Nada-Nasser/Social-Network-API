@@ -5,7 +5,7 @@ public class Notification {
 	private String Content;
 	private int UserID;
 
-	public void notify() {
+	public void notification() {
 		
 	}
 	public String getContent() {
