@@ -6,7 +6,8 @@ public class AccountController
 	
 	AccountManager accountManager = new AccountManager();
 	
-	public AccountController(AccountManager manager) {
+	public AccountController(AccountManager manager) 
+	{
 		// TODO Auto-generated constructor stub
 		accountManager = manager;
 	}
@@ -17,7 +18,8 @@ public class AccountController
 	 * @param email
 	 * @param password
 	 */
-	public String RequestRegister(String name, String email, String password) {
+	public String RequestRegister(String name, String email, String password) 
+	{
 		// TODO - implement AccountsCntroller.RequestRegister
 		throw new UnsupportedOperationException();
 	}
@@ -29,7 +31,8 @@ public class AccountController
 	 * 
 	 * @return {@link Account}
 	 */
-	public Account ActivateAccount(String Username, String Password, String email) {
+	public Account ActivateAccount(String Username, String Password, String email) 
+	{
 		// TODO - implement AccountsCntroller.ActivateAccount
 		int UserID = accountManager.CheckLoginInfo(Username, Password, email);
 		Account account; 
