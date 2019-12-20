@@ -19,6 +19,7 @@ public abstract class Account
 	protected int userID;
 	protected boolean isLoggedin;
 	protected Vector<Notification> notifications = new Vector<Notification>();
+	protected Vector<Account> friends = new Vector<Account>();
 	protected HashMap<Integer, Message> Messages = new HashMap<Integer, Message>();
 	protected Vector<Page> FollowPages = new Vector<Page>();
 	protected Vector<Group> JoinedGroup =new Vector<Group>();
@@ -26,7 +27,8 @@ public abstract class Account
 	
 	protected AccountController accountController;
 	
-	public Account(AccountController Controller) {
+	public Account(AccountController Controller) 
+	{
 		// TODO Auto-generated constructor stub
 		this.setAccountController(Controller);
 	}
@@ -62,7 +64,8 @@ public abstract class Account
 	 * 
 	 * @return {@link Page}
 	 */
-	public Page createPage(String Name, File Pic, String about, String type) {
+	public Page createPage(String Name, File Pic, String about, String type) 
+	{
 		// TODO - implement Account.createPage
 		throw new UnsupportedOperationException();
 	}
@@ -88,7 +91,8 @@ public abstract class Account
 	 * 
 	 * @return {@link Post}
 	 */
-	public Post sharePost(int PostID) {
+	public Post sharePost(int PostID) 
+	{
 		// TODO - implement Account.sharePost
 		throw new UnsupportedOperationException();
 	}
@@ -97,7 +101,17 @@ public abstract class Account
 	 * 
 	 * @param friend
 	 */
-	public void AddFriend(Account friend) {
+	public void sendFriendRequest(Account friend) 
+	{
+		// TODO - implement Account.AddFriend
+		
+		throw new UnsupportedOperationException();
+	}
+	
+	
+	
+	public void acceptFriendRequest(Account friend) 
+	{
 		// TODO - implement Account.AddFriend
 		throw new UnsupportedOperationException();
 	}
