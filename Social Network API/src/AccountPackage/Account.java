@@ -146,7 +146,7 @@ public abstract class Account
 			}
 		}
 		
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 	
 	
@@ -161,7 +161,7 @@ public abstract class Account
 				friends.add(accountController.RequestUserByID(notifications.get(i).getUserID()));
 			}
 		}
-		throw new UnsupportedOperationException();
+		//throw new UnsupportedOperationException();
 	}
 	public void upgradeToPremium() {
 		
@@ -282,6 +282,9 @@ public abstract class Account
 
 	public Vector<Page> getFollowPages() {
 		return FollowPages;
+	}
+	public Vector<Account> getFriend() {
+		return friends;
 	}
 
 	public void setFollowPages(Vector<Page> followPages) {

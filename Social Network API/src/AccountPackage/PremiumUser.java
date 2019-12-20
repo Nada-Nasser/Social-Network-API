@@ -3,7 +3,8 @@ package AccountPackage;
 
 public class PremiumUser extends Account {
 
-	public PremiumUser(AccountController Controller) {
+	public PremiumUser(AccountController Controller) 
+	{
 		super(Controller);
 		// TODO Auto-generated constructor stub
 	}
