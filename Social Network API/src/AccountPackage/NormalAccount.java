@@ -42,6 +42,7 @@ public class NormalAccount extends Account
 			System.out.println("input the amount of money you will pay");
 			/*will use PayPal's API*/
 			amountPayed = keyboard.nextInt();
+			break;
 		default:
 			System.out.println("wrong input");
 			amountPayed =0;
@@ -51,12 +52,14 @@ public class NormalAccount extends Account
 		if(amountPayed < 99) {
 			System.out.println("subscription was not successful, Try Again");
 		}
-	/*	else {
-			Vector<Account> AllAccount = AccountManager.getAllAccount();
-			AllAccount.remove(this);
-			AllAccount.add(new PremiumUser(Controller))
-		}*/
-		throw new UnsupportedOperationException();
+		else {
+			System.out.println("payment successful");
+			PremiumUser PU = new PremiumUser(this.accountController, this.Name, this.Password, this.email, this.userID);
+			PU.SetType("Premium User");
+
+			 AccountManager.removeUser(this.userID);
+			 AccountManager.AddAcount(PU);
+		}
 
 	}
 }

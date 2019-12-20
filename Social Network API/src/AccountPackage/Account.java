@@ -21,6 +21,7 @@ public abstract class Account
 	protected String gender;
 	protected Date dateOfBith;
 	protected String country; 
+	protected String UserType;
 	protected boolean isLoggedin;
 	protected Vector<Notification> notifications = new Vector<Notification>();
 	protected Vector<Account> friends = new Vector<Account>();
@@ -119,6 +120,9 @@ public abstract class Account
 	{
 		// TODO - implement Account.AddFriend
 		throw new UnsupportedOperationException();
+	}
+	public void upgradeToPremium() {
+		
 	}
 
 	/**
@@ -295,5 +299,10 @@ public abstract class Account
 	{
 		country = c;
 	}
-	
+	public void SetType(String Type) {
+		UserType = Type;
+	}
+	public String getType() {
+		return UserType;
+	}
 }

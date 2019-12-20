@@ -22,7 +22,14 @@ public class AccountController
 	 * @return {@link Account} if there isn't any account has same email in Account Manager
 	 * else it will return {@value null}
 	 */
-
+	public Account RequestToUpdateToPremium() {
+		Account account = null;
+		account = new PremiumUser(this);
+		
+		accountManager.AddAcount(account);
+	
+		return account;
+	}
 	public Account RequestRegister(String email, String name, String password, String gender, String country,
 			Date dateOfBirth) {
 		// TODO Auto-generated method stub
@@ -32,7 +39,7 @@ public class AccountController
 		{
 			int ID = accountManager.getnAccounts()+1;
 			account = new NormalAccount(this, name, password, email, ID);
-			
+			account.SetType("Normal User");
 			accountManager.AddAcount(account);
 		}
 		return account;

@@ -7,7 +7,14 @@ public class PremiumUser extends Account {
 		super(Controller);
 		// TODO Auto-generated constructor stub
 	}
-
+	public PremiumUser(AccountController Controller , String name , String password , String e_mail , int ID)
+	{
+		super(Controller);
+		Name = name;
+		Password = password;
+		email = e_mail;
+		userID = ID;
+	}
 	private int nOfAds;
 	private boolean checkNads;
 

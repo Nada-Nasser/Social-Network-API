@@ -7,7 +7,7 @@ import PostPackage.Post;
 public class AccountManager 
 {
 
-	private int nAccounts;
+	private static int nAccounts;
 	
 	/**
 	 * 
@@ -22,7 +22,7 @@ public class AccountManager
 	 * 
 	 * @return {@link Account}
 	 */
-	public Account getUser(int ID) 
+	public static Account getUser(int ID) 
 	{
 		// TODO - implement AccountManager.getUser
 		for(int i = 0 ; i < AllAccount.size() ;i++)
@@ -36,7 +36,19 @@ public class AccountManager
 		return null;
 	}
 	
-
+	public static void removeUser(int ID) 
+	{
+		// TODO - implement AccountManager.getUser
+		for(int i = 0 ; i < AllAccount.size() ;i++)
+		{
+			Account account = AllAccount.get(i);
+			if(account.getUserID() == ID)
+			{
+				AllAccount.remove(i);
+				nAccounts--;
+			}
+		}
+	}
 	/**
 	 * search for the account that has these data in {@link AccountManager}.AllAccount
 	 * @param name
@@ -63,7 +75,7 @@ public class AccountManager
 	 * 
 	 * @param Account
 	 */
-	public void AddAcount(Account account) {
+	public static void AddAcount(Account account) {
 		// TODO - implement AccountManager.AddAcount
 		AllAccount.add(account);
 		nAccounts = AllAccount.size();
