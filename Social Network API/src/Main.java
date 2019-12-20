@@ -37,14 +37,14 @@ public class Main {
 		 }
 		 
 			
-			/*System.out.println(account.isLoggedin());
+			System.out.println(account.isLoggedin());
 			System.out.println(account.getType());
 
 			account.upgradeToPremium();
 			
 			account = manager.getUser(1);
 			
-			System.out.println(account.getType());*/
+			System.out.println(account.getType());
 			
 
 		}
