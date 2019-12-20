@@ -67,7 +67,8 @@ public class AccountManager
 	 * 
 	 * @param Account
 	 */
-	public void AddAcount(Account account) {
+	public void AddAcount(Account account) 
+	{
 		// TODO - implement AccountManager.AddAcount
 		AllAccount.add(account);
 		//throw new UnsupportedOperationException();

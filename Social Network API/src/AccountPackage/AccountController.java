@@ -48,5 +48,27 @@ public class AccountController
 		}	
 	///	throw new UnsupportedOperationException();
 	}
+	public Account RequestUserByname(String name)
+	{
+		for(int i = 0; i < accountManager.getAllAccount().size(); i++)
+		{
+			if(accountManager.getAllAccount().get(i).getName().equals(name))
+			{
+				return accountManager.getAllAccount().get(i);
+			}
+		}
+		return null;
+	}
+	public Account RequestUserByID(int ID)
+	{
+		for(int i = 0; i < accountManager.getAllAccount().size(); i++)
+		{
+			if(accountManager.getAllAccount().get(i).getUserID() == ID)
+			{
+				return accountManager.getAllAccount().get(i);
+			}
+		}
+		return null;
+	}
 
 }
