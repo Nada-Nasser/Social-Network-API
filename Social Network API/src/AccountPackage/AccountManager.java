@@ -22,7 +22,7 @@ public class AccountManager
 	 * 
 	 * @return {@link Account}
 	 */
-	public static Account getUser(int ID) 
+	public Account getUser(int ID) 
 	{
 		// TODO - implement AccountManager.getUser
 		for(int i = 0 ; i < AllAccount.size() ;i++)
@@ -36,7 +36,7 @@ public class AccountManager
 		return null;
 	}
 	
-	public static void removeUser(int ID) 
+	public void removeUser(int ID) 
 	{
 		// TODO - implement AccountManager.getUser
 		for(int i = 0 ; i < AllAccount.size() ;i++)
@@ -75,7 +75,9 @@ public class AccountManager
 	 * 
 	 * @param Account
 	 */
-	public static void AddAcount(Account account) {
+
+	public void AddAcount(Account account) 
+	{
 		// TODO - implement AccountManager.AddAcount
 		AllAccount.add(account);
 		nAccounts = AllAccount.size();
@@ -108,12 +110,12 @@ public class AccountManager
 
 	}
 
-	public static Vector<Account> getAllAccount() 
+	public Vector<Account> getAllAccount() 
 	{
 		return AllAccount;
 	}
 
-	public static void setAllAccount(Vector<Account> allAccount) 
+	public void setAllAccount(Vector<Account> allAccount) 
 	{
 		AllAccount = allAccount;
 	}
