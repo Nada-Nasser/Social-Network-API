@@ -159,6 +159,7 @@ public abstract class Account
 			if(notifications.get(i).getContent().contains("New friend"))
 			{
 				friends.add(accountController.RequestUserByID(notifications.get(i).getUserID()));
+				notifications.remove(i);
 			}
 		}
 		//throw new UnsupportedOperationException();
