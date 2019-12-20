@@ -3,6 +3,7 @@ package AccountPackage;
 import java.io.File;
 import java.util.Date;
 import java.util.HashMap;
+import java.util.Scanner;
 import java.util.Vector;
 
 import GroupsPackage.*;
@@ -23,15 +24,16 @@ public abstract class Account
 	protected String country; 
 	protected boolean isLoggedin;
 	protected Vector<Notification> notifications = new Vector<Notification>();
+	protected Vector<Account> friends = new Vector<Account>();
 	protected HashMap<Integer, Message> Messages = new HashMap<Integer, Message>();
 	protected Vector<Page> FollowPages = new Vector<Page>();
 	protected Vector<Group> JoinedGroup =new Vector<Group>();
 	protected Vector<Post> Posts = new Vector<Post>();
-	protected Vector<Account> Friends = new Vector<Account>();
-	
+
 	protected AccountController accountController;
 	
-	public Account(AccountController Controller) {
+	public Account(AccountController Controller) 
+	{
 		// TODO Auto-generated constructor stub
 		this.setAccountController(Controller);
 	}
@@ -67,7 +69,8 @@ public abstract class Account
 	 * 
 	 * @return {@link Page}
 	 */
-	public Page createPage(String Name, File Pic, String about, String type) {
+	public Page createPage(String Name, File Pic, String about, String type) 
+	{
 		// TODO - implement Account.createPage
 		throw new UnsupportedOperationException();
 	}
@@ -93,7 +96,8 @@ public abstract class Account
 	 * 
 	 * @return {@link Post}
 	 */
-	public Post sharePost(int PostID) {
+	public Post sharePost(int PostID) 
+	{
 		// TODO - implement Account.sharePost
 		throw new UnsupportedOperationException();
 	}
@@ -102,8 +106,59 @@ public abstract class Account
 	 * 
 	 * @param friend
 	 */
-	public void AddFriend(Account friend) {
+	public void sendFriendRequest() 
+	{
 		// TODO - implement Account.AddFriend
+		Scanner keybord = new Scanner(System.in);
+		System.out.println("Enter name of friend: ");
+		String name = keybord.nextLine();
+		boolean foundAsFriend = false; 
+		
+		/* first check if user already exist in friends list */
+		for(int i = 0; i < friends.size(); i++)
+		{
+			if(friends.get(i).getName().equals(name))
+			{
+				foundAsFriend = true;
+				System.out.println("already exist in friends list");
+			}
+		}
+		
+		/* Two scenarios exist
+		 * 	1- The user does not exist in the system.
+		 * 	2- the user is not a friend but exist in the system.
+		 * 		2.1- make notification contain the ID of the sender account & content = "New friend"
+		 */
+		if(!foundAsFriend)
+		{
+			if(accountController.RequestUserByname(name) == null)
+			{
+				System.out.println("This account does not exist");
+			}
+			else
+			{
+				Notification notify = new Notification();
+				notify.setUserID(getUserID());
+				notify.setContent("New friend request from " + this.Name);
+				accountController.RequestUserByname(name).getNotification().add(notify);
+			}
+		}
+		
+		throw new UnsupportedOperationException();
+	}
+	
+	
+	
+	public void acceptFriendRequest() 
+	{
+		// TODO - implement Account.AddFriend
+		for(int i = 0; i < notifications.size(); i++)
+		{
+			if(notifications.get(i).getContent().contains("New friend"))
+			{
+				friends.add(accountController.RequestUserByID(notifications.get(i).getUserID()));
+			}
+		}
 		throw new UnsupportedOperationException();
 	}
 

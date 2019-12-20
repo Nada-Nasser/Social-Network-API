@@ -7,7 +7,8 @@ public class AccountController
 	
 	AccountManager accountManager = new AccountManager();
 	
-	public AccountController(AccountManager manager) {
+	public AccountController(AccountManager manager) 
+	{
 		// TODO Auto-generated constructor stub
 		accountManager = manager;
 	}
@@ -21,6 +22,7 @@ public class AccountController
 	 * @return {@link Account} if there isn't any account has same email in Account Manager
 	 * else it will return {@value null}
 	 */
+
 	public Account RequestRegister(String email, String name, String password, String gender, String country,
 			Date dateOfBirth) {
 		// TODO Auto-generated method stub
@@ -43,6 +45,7 @@ public class AccountController
 	 * 
 	 * @return {@link Account}
 	 */
+
 	public Account RequestLogin(String Username, String Password, String email) {
 		// TODO - implement AccountsCntroller.ActivateAccount
 		int UserID = accountManager.CheckLoginInfo(Username, Password, email);
@@ -57,6 +60,28 @@ public class AccountController
 		{
 			return null;
 		}	
+	}
+	public Account RequestUserByname(String name)
+	{
+		for(int i = 0; i < accountManager.getAllAccount().size(); i++)
+		{
+			if(accountManager.getAllAccount().get(i).getName().equals(name))
+			{
+				return accountManager.getAllAccount().get(i);
+			}
+		}
+		return null;
+	}
+	public Account RequestUserByID(int ID)
+	{
+		for(int i = 0; i < accountManager.getAllAccount().size(); i++)
+		{
+			if(accountManager.getAllAccount().get(i).getUserID() == ID)
+			{
+				return accountManager.getAllAccount().get(i);
+			}
+		}
+		return null;
 	}
 
 	

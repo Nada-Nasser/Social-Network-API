@@ -6,6 +6,7 @@ import PostPackage.Post;
 
 public class AccountManager 
 {
+
 	private int nAccounts;
 	
 	/**
@@ -21,7 +22,8 @@ public class AccountManager
 	 * 
 	 * @return {@link Account}
 	 */
-	public Account getUser(int ID) {
+	public Account getUser(int ID) 
+	{
 		// TODO - implement AccountManager.getUser
 		for(int i = 0 ; i < AllAccount.size() ;i++)
 		{
@@ -43,7 +45,8 @@ public class AccountManager
 	 * 
 	 * @return {@link Account}.UserID
 	 */
-	public int CheckLoginInfo(String name, String Password, String email) {
+	public int CheckLoginInfo(String name, String Password, String email) 
+	{
 		// TODO - implement AccountManager.CheckInfo
 		for(int i = 0 ; i < AllAccount.size() ;i++)
 		{
@@ -60,7 +63,8 @@ public class AccountManager
 	 * 
 	 * @param Account
 	 */
-	public void AddAcount(Account account) {
+	public void AddAcount(Account account) 
+	{
 		// TODO - implement AccountManager.AddAcount
 		AllAccount.add(account);
 		nAccounts = AllAccount.size();
@@ -71,7 +75,8 @@ public class AccountManager
 	 * 
 	 * @param ID
 	 */
-	public boolean ValidateUserID(int ID) {
+	public boolean ValidateUserID(int ID) 
+	{
 		// TODO - implement AccountManager.ValidateUserID
 		throw new UnsupportedOperationException();
 	}
@@ -86,15 +91,18 @@ public class AccountManager
 		throw new UnsupportedOperationException();
 	}
 
+
 	public int getnAccounts() {
 		return AllAccount.size();
 	}
 
-	public Vector<Account> getAllAccount() {
+	public Vector<Account> getAllAccount() 
+	{
 		return AllAccount;
 	}
 
-	public void setAllAccount(Vector<Account> allAccount) {
+	public void setAllAccount(Vector<Account> allAccount) 
+	{
 		AllAccount = allAccount;
 	}
 
