@@ -14,6 +14,7 @@ import PostPackage.*;
 
 public abstract class Account 
 {
+	
 	protected String Name;
 	protected String email;
 	protected String Password;
