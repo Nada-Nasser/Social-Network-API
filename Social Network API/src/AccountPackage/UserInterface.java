@@ -1,5 +1,6 @@
 package AccountPackage;
 
+import java.util.Date;
 
 public class UserInterface 
 {
@@ -14,22 +15,24 @@ public class UserInterface
 	 * @param email
 	 * @param Name
 	 * @param Password
+	 * 
+	 * @return {@link Account} 
 	 */
-	public Account Register(String email, String Name, String Password) {
-		// TODO - implement UserInterface.Register
-		throw new UnsupportedOperationException();
+	public Account Register(String email, String Name, String Password , String gender , String country,Date dateOfBirth)
+	{
+		return accountController.RequestRegister(email, Name,Password , gender , country , dateOfBirth);
 	}
 
 	/** 
 	 * @param email
 	 * @param Name
 	 * @param Password
+	 * 
+	 * @return {@link Account} 
 	 */
-	public Account login(String email, String Name, String Password) {
-		// TODO - implement UserInterface.login
-		return accountController.ActivateAccount(Name, Password, email);
-	
-		///throw new UnsupportedOperationException();
+	public Account login(String email, String Name, String Password) 
+	{
+		return accountController.RequestLogin(Name, Password, email);
 	}
 
 }

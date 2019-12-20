@@ -1,6 +1,7 @@
 package AccountPackage;
 
 import java.io.File;
+import java.util.Date;
 import java.util.HashMap;
 import java.util.Vector;
 
@@ -17,12 +18,16 @@ public abstract class Account
 	protected String Password;
 	protected File ProfilePic;
 	protected int userID;
+	protected String gender;
+	protected Date dateOfBith;
+	protected String country; 
 	protected boolean isLoggedin;
 	protected Vector<Notification> notifications = new Vector<Notification>();
 	protected HashMap<Integer, Message> Messages = new HashMap<Integer, Message>();
 	protected Vector<Page> FollowPages = new Vector<Page>();
 	protected Vector<Group> JoinedGroup =new Vector<Group>();
 	protected Vector<Post> Posts = new Vector<Post>();
+	protected Vector<Account> Friends = new Vector<Account>();
 	
 	protected AccountController accountController;
 	
@@ -246,4 +251,35 @@ public abstract class Account
 	public void setAccountController(AccountController accountController) {
 		this.accountController = accountController;
 	}
+
+	public String getGender()
+	{
+		return gender;
+	}
+	
+	public void setGender(String g)
+	{
+		gender = g;
+	}
+	
+	public Date getDateOfBirth()
+	{
+		return dateOfBith;
+	}
+	
+	public void setDateOfBirth(Date g)
+	{
+		dateOfBith = g;
+	}
+	
+	public String getcountry()
+	{
+		return country;
+	}
+	
+	public void setcountry(String c)
+	{
+		country = c;
+	}
+	
 }

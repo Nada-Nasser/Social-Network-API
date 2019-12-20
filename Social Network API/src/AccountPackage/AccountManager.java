@@ -4,9 +4,8 @@ import java.util.Vector;
 
 import PostPackage.Post;
 
-public class AccountManager {
-
-
+public class AccountManager 
+{
 	private int nAccounts;
 	
 	/**
@@ -34,6 +33,7 @@ public class AccountManager {
 		}
 		return null;
 	}
+	
 
 	/**
 	 * search for the account that has these data in {@link AccountManager}.AllAccount
@@ -56,10 +56,6 @@ public class AccountManager {
 		return -1;
 	}
 	
-	public int CheckInfo(String name, String Password, String email)
-	{
-		throw new UnsupportedOperationException();
-	}
 	/**
 	 * 
 	 * @param Account
@@ -67,6 +63,7 @@ public class AccountManager {
 	public void AddAcount(Account account) {
 		// TODO - implement AccountManager.AddAcount
 		AllAccount.add(account);
+		nAccounts = AllAccount.size();
 		//throw new UnsupportedOperationException();
 	}
 
@@ -90,11 +87,7 @@ public class AccountManager {
 	}
 
 	public int getnAccounts() {
-		return nAccounts;
-	}
-
-	public void setnAccounts(int nAccounts) {
-		this.nAccounts = nAccounts;
+		return AllAccount.size();
 	}
 
 	public Vector<Account> getAllAccount() {
@@ -103,6 +96,16 @@ public class AccountManager {
 
 	public void setAllAccount(Vector<Account> allAccount) {
 		AllAccount = allAccount;
+	}
+
+	public boolean CheckRegsterInfo(String email) 
+	{
+		for(int i = 0 ; i < AllAccount.size() ; i++)
+		{
+			if(AllAccount.get(i).getEmail().equals(email))
+				return false;
+		}
+		return true;
 	}
 	
 }
