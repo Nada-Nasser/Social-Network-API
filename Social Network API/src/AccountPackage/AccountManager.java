@@ -7,7 +7,8 @@ import PostPackage.Post;
 public class AccountManager 
 {
 
-	private static int nAccounts;
+	private int nAccounts;
+
 	
 	/**
 	 * 

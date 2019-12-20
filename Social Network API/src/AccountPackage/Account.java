@@ -30,6 +30,7 @@ public abstract class Account
 	protected Vector<Page> FollowPages = new Vector<Page>();
 	protected Vector<Group> JoinedGroup =new Vector<Group>();
 	protected Vector<Post> Posts = new Vector<Post>();
+
 	protected AccountController accountController;
 	
 	public Account(AccountController Controller) 
