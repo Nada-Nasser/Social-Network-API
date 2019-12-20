@@ -1,5 +1,6 @@
 package AccountPackage;
 
+import java.util.Date;
 
 public class AccountController 
 {
@@ -17,11 +18,24 @@ public class AccountController
 	 * @param name
 	 * @param email
 	 * @param password
+	 * 
+	 * @return {@link Account} if there isn't any account has same email in Account Manager
+	 * else it will return {@value null}
 	 */
-	public String RequestRegister(String name, String email, String password) 
-	{
-		// TODO - implement AccountsCntroller.RequestRegister
-		throw new UnsupportedOperationException();
+
+	public Account RequestRegister(String email, String name, String password, String gender, String country,
+			Date dateOfBirth) {
+		// TODO Auto-generated method stub
+		boolean  isValid = accountManager.CheckRegsterInfo(email);
+		Account account = null;
+		if(isValid)
+		{
+			int ID = accountManager.getnAccounts()+1;
+			account = new NormalAccount(this, name, password, email, ID);
+			
+			accountManager.AddAcount(account);
+		}
+		return account;
 	}
 
 	/**
@@ -31,8 +45,8 @@ public class AccountController
 	 * 
 	 * @return {@link Account}
 	 */
-	public Account ActivateAccount(String Username, String Password, String email) 
-	{
+
+	public Account RequestLogin(String Username, String Password, String email) {
 		// TODO - implement AccountsCntroller.ActivateAccount
 		int UserID = accountManager.CheckLoginInfo(Username, Password, email);
 		Account account; 
@@ -46,7 +60,8 @@ public class AccountController
 		{
 			return null;
 		}	
-	///	throw new UnsupportedOperationException();
 	}
+
+	
 
 }
