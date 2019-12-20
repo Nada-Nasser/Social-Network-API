@@ -14,7 +14,7 @@ public class AccountManager
 	 * 
 	 * All Accounts that's saved in the database
 	 */
-	private Vector<Account> AllAccount = new Vector<Account>();
+	private static  Vector<Account> AllAccount = new Vector<Account>();
 	
 	
 	/**
@@ -103,12 +103,12 @@ public class AccountManager
 		this.nAccounts = nAccounts;
 	}
 
-	public Vector<Account> getAllAccount() 
+	public static Vector<Account> getAllAccount() 
 	{
 		return AllAccount;
 	}
 
-	public void setAllAccount(Vector<Account> allAccount) 
+	public static void setAllAccount(Vector<Account> allAccount) 
 	{
 		AllAccount = allAccount;
 	}
