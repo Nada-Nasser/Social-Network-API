@@ -23,5 +23,5 @@ public class Main {
 			// TODO: handle exception
 			System.out.println(e.getMessage());
 		}
-	}
+}
 }
