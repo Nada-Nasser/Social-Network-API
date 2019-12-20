@@ -56,9 +56,9 @@ public class NormalAccount extends Account
 			System.out.println("payment successful");
 			PremiumUser PU = new PremiumUser(this.accountController, this.Name, this.Password, this.email, this.userID);
 			PU.SetType("Premium User");
-
-			 AccountManager.removeUser(this.userID);
-			 AccountManager.AddAcount(PU);
+			AccountManager AM = new AccountManager();
+			 AM.removeUser(this.userID);
+			 AM.AddAcount(PU);
 		}
 
 	}

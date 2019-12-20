@@ -25,7 +25,7 @@ public class Main {
 
 			account.upgradeToPremium();
 			
-			account = AccountManager.getUser(1);
+			account = manager.getUser(1);
 			
 			System.out.println(account.getType());
 			
