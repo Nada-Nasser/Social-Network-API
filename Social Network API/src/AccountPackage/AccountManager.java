@@ -6,15 +6,14 @@ import PostPackage.Post;
 
 public class AccountManager 
 {
-
 	private int nAccounts;
 
-	
+
 	/**
 	 * 
 	 * All Accounts that's saved in the database
 	 */
-	private static  Vector<Account> AllAccount = new Vector<Account>();
+	private static Vector<Account> AllAccount = new Vector<Account>();
 	
 	
 	/**
@@ -81,7 +80,7 @@ public class AccountManager
 	{
 		// TODO - implement AccountManager.AddAcount
 		AllAccount.add(account);
-		nAccounts = AllAccount.size();
+	//	nAccounts = AllAccount.size();
 		//throw new UnsupportedOperationException();
 	}
 
@@ -106,7 +105,7 @@ public class AccountManager
 	}
 
 
-	public int getnAccounts() {
+	public static int getnAccounts() {
 		return AllAccount.size();
 
 	}

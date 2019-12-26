@@ -6,12 +6,9 @@ public class Main {
 
 	public static void main(String[] args) 
 	{
-		AccountManager manager = new AccountManager();
-		AccountController accountController = new AccountController(manager);
-		UserInterface userInterface = new UserInterface(accountController);
+		UserInterface userInterface = new UserInterface();
 		
 		
-			
 		userInterface.Register("email","Hussein", "Password", "gender", "country", new Date(12));
 		userInterface.Register("email1","omar", "Password", "male", "country", new Date(12));
 			
@@ -45,9 +42,28 @@ public class Main {
 			account = manager.getUser(1);
 			
 			System.out.println(account.getType());
-			
 
+			/*
+			Account account = userInterface.Register("email","Name", "Password", "gender", "country", new Date(12));
+			System.out.println(AccountManager.getnAccounts());
+			Account account2 = userInterface.Register("email2","Name2", "Password2", "gender", "country", new Date(12));
+			System.out.println(AccountManager.getnAccounts());
+			Account account3 = userInterface.Register("email3","Name2", "Password2", "gender", "country", new Date(12));
+			System.out.println(AccountManager.getnAccounts());
+			Account account4 = userInterface.Register("email4","Name2", "Password2", "gender", "country", new Date(12));
+			System.out.println(AccountManager.getnAccounts());
+			
+			System.out.println(account.getUserID() + " " + account.isLoggedin());
+			System.out.println(account2.getUserID() + " " + account2.isLoggedin());
+			System.out.println(account3.getUserID() + " " + account2.isLoggedin());
+			System.out.println(account4.getUserID() + " " + account2.isLoggedin());
+		
 		}
+		catch (Exception e) {
+			// TODO: handle exception
+			System.out.println(e.getMessage());
+		}
+		*/
 		
 	}
 
