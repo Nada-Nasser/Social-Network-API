@@ -34,14 +34,13 @@ public class Main {
 		 }
 		 
 			
-			System.out.println(account.isLoggedin());
+		 	System.out.println(account.isLoggedin());
 			System.out.println(account.getType());
 
-			account.upgradeToPremium();
+			account = account.upgradeToPremium("PayPal" , 100);
 			
-			account = manager.getUser(1);
-			
-			System.out.println(account.getType());
+			if(account!= null)
+				System.out.println(account.getType());
 
 			/*
 			Account account = userInterface.Register("email","Name", "Password", "gender", "country", new Date(12));
@@ -64,6 +63,6 @@ public class Main {
 			System.out.println(e.getMessage());
 		}
 		*/
-		
+	}
 	}
 

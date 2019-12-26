@@ -165,8 +165,8 @@ public abstract class Account
 		}
 		//throw new UnsupportedOperationException();
 	}
-	public void upgradeToPremium() {
-		
+	public Account upgradeToPremium(String PaymentMethod , int AmountToPay) {
+		return this;
 	}
 
 	/**
