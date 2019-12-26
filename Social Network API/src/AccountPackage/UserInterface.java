@@ -4,11 +4,12 @@ import java.util.Date;
 
 public class UserInterface 
 {
-	AccountController accountController;
+	static AccountManager manager = new AccountManager();
+	static AccountController accountController = new AccountController(manager);
 	
-	public UserInterface(AccountController Controller) {
+	public UserInterface() {
 		// TODO Auto-generated constructor stub
-		accountController=Controller;
+	//	accountController=Controller;
 	}
 	
 	/**

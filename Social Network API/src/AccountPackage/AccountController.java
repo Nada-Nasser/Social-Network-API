@@ -5,7 +5,7 @@ import java.util.Date;
 public class AccountController 
 {
 	
-	AccountManager accountManager = new AccountManager();
+	static AccountManager accountManager;
 	
 	public AccountController(AccountManager manager) 
 	{
@@ -30,7 +30,7 @@ public class AccountController
 		Account account = null;
 		if(isValid)
 		{
-			int ID = accountManager.getnAccounts()+1;
+			int ID = accountManager.getnAccounts();
 			account = new NormalAccount(this, name, password, email, ID);
 			
 			accountManager.AddAcount(account);

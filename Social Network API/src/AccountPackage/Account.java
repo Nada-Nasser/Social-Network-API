@@ -1,6 +1,7 @@
 package AccountPackage;
 
 import java.io.File;
+import java.util.Comparator;
 import java.util.Date;
 import java.util.HashMap;
 import java.util.Scanner;
@@ -12,7 +13,7 @@ import NotificationPackage.*;
 import PagePackage.*;
 import PostPackage.*;
 
-public abstract class Account 
+public abstract class Account
 {
 	protected String Name;
 	protected String email;
@@ -30,7 +31,7 @@ public abstract class Account
 	protected Vector<Group> JoinedGroup =new Vector<Group>();
 	protected Vector<Post> Posts = new Vector<Post>();
 
-	protected AccountController accountController;
+	protected static AccountController accountController;
 	
 	public Account(AccountController Controller) 
 	{
@@ -335,6 +336,19 @@ public abstract class Account
 	public void setcountry(String c)
 	{
 		country = c;
+	}
+	
+	static class MyComparator implements Comparator<Account> { 
+		@Override
+		public int compare(Account o1, Account o2) {
+			// TODO Auto-generated method stub
+			if(o1.userID == o2.userID)
+				return 0;
+			else
+			{
+				return -1;
+			}
+		} 
 	}
 	
 }
