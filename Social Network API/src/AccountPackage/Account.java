@@ -109,7 +109,7 @@ public abstract class Account
 	 * 
 	 * @param friend
 	 */
-	public void sendFriendRequest() 
+	public boolean sendFriendRequest() 
 	{
 		// TODO - implement Account.AddFriend
 		Scanner keybord = new Scanner(System.in);
@@ -124,6 +124,7 @@ public abstract class Account
 			{
 				foundAsFriend = true;
 				System.out.println("already exist in friends list");
+				return false;
 			}
 		}
 		
@@ -137,6 +138,7 @@ public abstract class Account
 			if(accountController.RequestUserByname(name) == null)
 			{
 				System.out.println("This account does not exist");
+				return false;
 			}
 			else
 			{
@@ -144,25 +146,32 @@ public abstract class Account
 				notify.setUserID(getUserID());
 				notify.setContent("New friend request from " + this.Name);
 				accountController.RequestUserByname(name).getNotification().add(notify);
+				return true;
 			}
 		}
+		return false;
 		
 		//throw new UnsupportedOperationException();
 	}
 	
 	
 	
-	public void acceptFriendRequest() 
+	public boolean acceptFriendRequest() 
 	{
 		// TODO - implement Account.AddFriend
+		//boolean notificationFound = false;
 		for(int i = 0; i < notifications.size(); i++)
 		{
 			if(notifications.get(i).getContent().contains("New friend"))
 			{
 				friends.add(accountController.RequestUserByID(notifications.get(i).getUserID()));
+				accountController.RequestUserByID(notifications.get(i).getUserID()).getFriend().add(this);
 				notifications.remove(i);
+				return true;
 			}
 		}
+		return false;
+		//return notificationFound;
 		//throw new UnsupportedOperationException();
 	}
 	public Account upgradeToPremium(String PaymentMethod , int AmountToPay) {
